@@ -1,0 +1,118 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\title{Math Notes}
+\author{Connor D}
+\date{September 2016}
+
+\begin{document}
+
+\maketitle
+
+\section{Exponential Functions}
+Definition: an exponential function is a function of the form \(f(x) = a^x\) where \(a\) is a constant.
+\begin{itemize}
+    \item The range of an exponential function can only include positive numbers
+    \item All exponential functions are one-to-one
+    \item \(f(x) = e^x\) is called the natural exponential function
+\end{itemize}
+
+\subsection{Laws of Exponents}
+\begin{itemize}
+    \item \(a^{m+n} = a^m * a^n\)
+    \item \((a^m)^n = a^{m*n}\)
+    \item \(a^{m/n} = \sqrt[n]{a^m}\)
+    \item \(a^{-n} = \frac{1}{a^n}\)
+    \item \(a^0 = 1\)
+\end{itemize}
+
+\subsection{Compound Growth}
+The general formula for compound growth is \(A(t) = P(1+\frac{r}{n})^{t*n}\), where \(P\) is the starting quantity of your unit, \(r\) is the rate at which growth happens, \(t\) is the amount of time growth has been taking place, and \(n\) is the number of times growth happens in a unit of \(t\).\\
+\\
+The formula for continuously compounded growth is \(A(t) = P*e^{rt}\), where \(P, r,\) and \(t\) have the same definitions as above.
+
+\subsection{Exercises}
+\renewcommand{\labelenumi}{\alph{enumi}}
+\begin{enumerate}
+    \item) Find the range of \(f(x) = 6 + 2^x\) 
+    \item) Let \(f(x) = 2^{6x-5}\) \tab[.05cm] and \tab[.03cm] \(g(x) = 8^{x+1}\)
+    
+    \tab[0.2cm]For what values of \(x\) does \(f(x) = g(x)\)?
+    \item) I have a bank account that starts with \$500, has an interest rate of 10\% per year, and is compounded monthly. Find the formula for the growth of my bank account.
+    \item) Find the growth formula for a culture of bacteria that starts with 5000 bacteria and grows continuously at a rate of 12\% per hour.
+    \item) If I start with 20mg of iodine-131, which decays continuously at a rate of 8.64\% per day, how much iodine-131 do I have left after 10 days?
+\end{enumerate}
+
+\clearpage
+
+\section{Logarithmic Functions}
+A logarithm is another way of writing an exponential function:\\
+\tab \(\log_x y = z \) is just another way of writing \(x^z = y\)
+\subsection{Four Basic Properties}
+\begin{itemize}
+    \item \(\log_a 1 = 0\) because \(a^0 = 1\)
+    \item \(\log_a a = 1\) because \(a^1 = a\)
+    \item \(\log_a (a^x) = x\) because \(a^x = a^x\)
+    \item \(a^{\log_a x} = x\) because the exponent and the logarithm cancel eachother out.
+\end{itemize}
+
+\subsection{Laws of Logarithms}
+\begin{itemize}
+    \item \(\log_a (x*y) = \log_a x + \log_a y\)
+    \item \(\log_a (\frac{x}{y}) = \log_a x - \log_a y\)
+    \item \(\log_a (x^y) = y*\log_a x\)
+\end{itemize}
+\subsubsection{Proofs}
+\begin{itemize}
+    \item \(r = \log_a x\) and \(s = \log_a y\)\\
+    \tab \(a^r = x\) \tab \(a^s = y\)\\
+    \tab \(xy = a^r * a^s = a^{r+s}\)\\
+    \tab \(\log_a (xy) = \log_a (a^{r+s}) = r+s\)\\
+    \tab \(r+s = \log_a x + \log_a y\)\\
+    \tab \(\log_a (xy) = \log_a x + \log_a y\)
+    \item \(r = \log_a x\) and \(s = \log_a y\)\\
+    \tab \(a^r = x\) \tab \(a^s = y\)\\
+    \tab \(\frac{x}{y} = \frac{a^r}{a^s} = a^{r-2}\)\\
+    \tab \(\log_a (\frac{x}{y}) = \log_a (a^{r-s}) = r-s\)\\
+    \tab \(r-s = \log_a x - \log_a y\)\\
+    \tab \(log_a (\frac{x}{y}) = \log_a x - \log_a y\)\\
+\end{itemize}
+
+\clearpage
+
+\section{Angles}
+
+An angle is the set of points determined by 2 rays, \(l_1\) (the initial side) and \(l_2\) (the terminal side), that have the same vertex \(O\). The measure of an angle can be thought of as the rotation of \(l_1\) about \(O\) to match \(l_2\).\\\\
+Angles are written as \(\angle{AOB}\) where A is a point on \(l_1\) and B is a point on \(l_2\).\\\\
+The standard position of an angle is \(O = (0,0)\) and \(l_1\) is the positive x-axis.\\\\
+A positive angle measure denotes a counterclockwise rotation, while a negative denotes a clockwise rotation.\\\\
+Two angles with the same initial and terminal sides are called coterminal.\\\\
+Angles are usually named using lowercase Greek letters.\\
+ex. \alpha, \beta,, \gamma, \theta, etc.
+
+\clearpage
+
+\section{Answers}
+\subsection{Exponential Functions}
+\renewcommand{\labelenumi}{\alph{enumi}}
+\begin{enumerate}
+    \item) The equation is shifted up by 6, so Range \(= (6, \infty)\)
+    \item) \(x = ^8/_3\)\\
+        \tab \(2^{6x-5} = 8^{x+1}\)\\
+        \tab \(2^{6x-5} = (2^3)^{x+1} = 2^{3x+3}\)\\
+        \tab \(6x-5 = 3x+3\)\\
+        \tab \(6x = 3x+8\)\\
+        \tab \(3x = 8\)\\
+        \tab \(x = ^3/_8\)\\
+    \item) \(A(t) = 500(1+\frac{.11}{12})^{12t}\)\\
+        \tab \(P = \$500\), \(r = .1\), \(n =\) months in a year \(= 12\)
+    \item) \(A(t) = 5000*e^{.12t}\)\\
+        \tab \(P = 5000\), \(r = .12\)
+    \item) 8.429mg\\
+        \tab \(P = 20, r = -.0864\)\\
+        \tab \(A(t) = 20*e^{-.0864t}\)\\
+        \tab \(A(10) = 20*e^{-.0864*10}\)
+\end{enumerate}
+\end{document}
