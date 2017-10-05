@@ -16,6 +16,7 @@
 \newcommand\fx{\(f(x)\) }
 \newcommand\ciab{\([a, b]\) }
 \newcommand\regsum{\sum_{k=1}^{n}}
+\newcommand\intab{\int_a^b}
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
@@ -731,7 +732,66 @@ Note: These functions are probably fairly unimportant as they haven't shown up s
             S_n = \regsum f(c_k)\Delta x_k = \regsum f(c_k)\left(\frac{b-a}{n}\right)
             \end{gather*}
 \section{Definite Integrals}
-    \subsection{Some rules}
-        
+    If \(f\) is integrable on \([a, b]\), then
+    \begin{gather*}
+        \int_a^b f(x)dx = \lim_{n\to\infty} \regsum f(c_k)\Delta_k
+    \end{gather*}
+    where
+    \begin{gather*}
+        \Delta_k = \frac{b-a}{n} \text{\tab and\tab} c_k = a+(\Delta_k)*k
+    \end{gather*}
+    So
+    \begin{gather*}
+        \int_a^b f(x)dx = \lim_{n\to\infty} \regsum f\left(a + k\frac{(b-a)}{n}\right)\left(\frac{b-a}{n}\right)
+    \end{gather*}
+    Or more simply
+    \begin{gather*}
+        \intab f(x)dx = F(b)-F(a)
+    \end{gather*}
+    \subsection{Average Of A Function}
+        If \(f\) is integrable on \([a, b]\) then its average, or mean, value is 
+        \begin{gather*}
+            av(f) = \frac{1}{b-a}\intab f(x)dx
+        \end{gather*}
+    \subsection{Definite Integral Rules}
+        \subsubsection{Order of Integration}
+            \begin{gather*}
+                \int_b^a f(x)dx = -\intab f(x)dx
+            \end{gather*}
+        \subsubsection{Zero Width Interval}
+            \begin{gather*}
+                \int_a^a f(x)dx = 0
+            \end{gather*}
+        \subsubsection{Constant Multiple}
+            \begin{gather*}
+                \intab kf(x)dx = k\intab f(x)dx
+            \end{gather*}
+        \subsubsection{Sum and Difference}
+            \begin{gather*}
+                \intab (f(x)\pm g(x))dx = \intab f(x)dx \pm \intab g(x)dx
+            \end{gather*}
+        \subsubsection{Additivity}
+            \begin{gather*}
+                \intab f(x)dx + \int_b^c f(x)dx = \int_a^c f(x)dx
+            \end{gather*}
+        \subsubsection{Max-Min Inequality}
+            If \(f(x)\) has a maximum value \(g\) and a minimum value \(i\) on \([a, b]\), then
+            \begin{gather*}
+                i(b-a) \leq \intab f(x)dx \leq g(b-a)
+            \end{gather*}
+    \subsection{Fundamental Theorem Of Calculus}
+        \begin{gather*}
+            F(x) = \int_a^x f(t)dt 
+        \end{gather*}
+    \subsection{Weird Technical Definition Stuff}
+        For certain functions, as the norm of the partitions of \([a, b]\) approaches zero, the values of the corresponding Riemann Sums approach a limiting value \(J\).\\
+        Given \(\epsilon\) as a small positive number that specifies how close to \(J\) \(S_n\) must be\\
+        and \(\delta\) as a second small positive number that specifies how small the norm of the partition must be in order for convergence to happen:\\
+        \\
+        Let \(f(x)\) be a function defined on a closed interval \([a, b]\). We say that the number \(J\) is the definite integral of \(f\) over \([a, b]\) and that \(J\) is the limit of the Riemann Sums \(\regsum f(c_k)\Delta x_k\) if the following condition is satisfied\\
+        given any number \(\epsilon > 0\) there is a corresponding number \(\delta > 0\) such that for every partition \(P = {x_0, x_1, ..., x_n}\) of \([a, b]\) with \(\|P\| < \delta\) and any choice of \(c_k\) in \([x_{k-1}, x_k]\), we have
+        \begin{gather*}
+            \left|\regsum f(c_k)\Delta x_k - J\right|<    \epsilon
+        \end{gather*}
     
 \end{document}
